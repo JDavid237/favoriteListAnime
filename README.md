@@ -125,7 +125,7 @@ Contexto global con `useReducer` + `localStorage`
 ## 📦 Instalación y uso
 
 ```bash
-git clone https://github.com/tuusuario/ListaAnimes.git
+git clone https://github.com/JDavid237/favoriteListAnime
 cd ListaAnimes
 npm install
 npm run dev
@@ -135,7 +135,7 @@ npm run dev
 
 ## 🌐 Enlace desplegado
 
-[👉 Ver aplicación en Netlify](https://lista-animes.netlify.app)
+[👉 Ver aplicación en Netlify](https://willowy-cuchufli-9e3359.netlify.app/)
 
 ---
 
