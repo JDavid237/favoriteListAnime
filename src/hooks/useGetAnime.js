@@ -13,13 +13,11 @@ export const useGetAnime = (params, sorted) => {
       setLoading(true);
 
       const search = await searchAnime(params, currentPage);
-      console.log()
       if (error in search) {
         setError(search.error);
       }
 
       setAnimeList(search.data);
-      console.log(search);
       totalPage.current = search.totalPage;
       setLoading(false);
 
