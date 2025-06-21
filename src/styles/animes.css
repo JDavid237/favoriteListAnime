@@ -1,0 +1,138 @@
+.animeContainer {
+    margin-top: 0px;
+    padding: 1%;
+    padding-top: 0;
+    
+}
+
+.list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 3%;
+}
+
+.anime {
+    background-color: rgb(26, 25, 25);
+    padding: 5%;
+    border-radius: 1px;
+    transition: transform .5s ease;
+}
+
+.anime:hover {
+    transform: scale(1.1);
+}
+
+.header-anime img {
+    width: 100%;
+    aspect-ratio: 1/1.4;
+}
+
+.header-anime h3 {
+
+    font-weight: bold;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1rem;
+}
+
+.heart {
+    position: absolute;
+    color: rgba(245, 245, 245, 0.705);
+    font-size: 1.4rem;
+    top: 2%;
+    right: 2%;
+    cursor: pointer;
+    transition: .5s ease;
+}
+
+.heart.active {
+    color: rgba(255, 0, 0, 0.726);
+}
+
+.heart:hover {
+    color: rgba(245, 245, 245, 0.425);
+}
+
+.heart.active:hover {
+    color: rgba(255, 0, 0, 0.493);
+}
+
+.heart.pop {
+  animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.5); }
+  100% { transform: scale(1); }
+}
+
+
+
+.score {
+    position: absolute;
+    bottom: 1%;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.473);
+    padding: 2%;
+    font-size: 1.15rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 500;
+    text-align: center;
+}
+
+/*	Pafination
+=========================================== */
+
+.pagination{
+    margin: 5px auto;
+    display: flex;
+    gap: 4px;
+    width: 95%;
+    overflow-x: auto;
+    max-width: 800px;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+}
+
+.pagination div {
+    cursor: pointer;
+    text-align: center;
+    flex: 1 0;
+    user-select: none;
+    padding: 2px 6px;
+    background-color: rgba(128, 0, 128, 0.5);
+}
+
+.pagination div.active {
+    background-color: rgba(0, 0, 0, 0.473);
+}
+
+.pagination div:hover {
+    background-color: rgba(128, 0, 128, 0.8);
+}
+
+.pagination button {
+    
+    cursor: pointer;
+    background-color:  rgba(128, 0, 128, 0.5);
+    border: none;
+    color: whitesmoke;
+    padding: 5px 6px 5px 10px;
+    border-radius: 100% 25% 25% 100%;
+    
+}
+
+.pagination button ~ button {
+    border-radius: 25% 100% 100% 25%;
+    padding: 5px 10px 5px 6px;
+    
+}
+
+.pagination button:hover{
+    background-color: rgba(128, 0, 128, 0.8);
+}

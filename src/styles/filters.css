@@ -1,0 +1,64 @@
+.filters form {
+    width: 100%;
+    max-width: 550px;
+    display: flex;
+    justify-content: right;
+    margin-bottom: 2%;
+    padding: 0.5% 1%;
+    gap: 10px;
+}
+
+.search {
+    padding: 5px 15px;
+    border:2px solid whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    cursor: auto;
+    flex: 3 1;
+    gap: 5px;
+    
+}
+
+.search input {
+    all: unset;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.search input:placeholder-shown {
+    color: rgba(255, 255, 255, 0.781);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+.anime-type {
+    cursor: pointer;
+    flex: 1 1;
+    font-size: 0.9rem;
+    background-color: rgba(0, 0, 0, 0.808);
+    padding: 5px;
+    border: 2px solid whitesmoke;
+    border-radius: 10px;
+}
+
+.sort {
+    flex: 1 1;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    transition: .4s;
+}
+
+.sort:hover {
+    text-shadow: 0 0 2px rgba(75, 73, 73, 0.651);
+}
+
+.sort-icon {
+    margin-top: 2px;
+}
