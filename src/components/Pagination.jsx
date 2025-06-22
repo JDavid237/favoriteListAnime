@@ -1,5 +1,7 @@
+/* eslint-disable no-unused-vars */
 import { useMemo, useState } from "react"
 import { GrLinkPrevious, GrLinkNext } from "react-icons/gr";
+import { motion } from "motion/react";
 
 export function Pagination({ totalPage, loadPage, isLoading }) {
     const [currentPage, setCurrentPage] = useState(1)
@@ -33,12 +35,18 @@ export function Pagination({ totalPage, loadPage, isLoading }) {
         }
     }
 
-    if (isLoading || totalPage == 1) return 
+    if (isLoading || totalPage == 1) return
 
     return (
-        <div className="pagination">
-            <button onClick={handlePrevGroup} style={{display: `${currentGroupStart === 0 ? 'none' : 'inline-block'}`}}>
-               <GrLinkPrevious/> 
+        <motion.div
+            className="pagination"
+            initial={{ opacity: 0, y: 10000 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 3 }}
+            key="pagination">
+
+            <button onClick={handlePrevGroup} style={{ display: `${currentGroupStart === 0 ? 'none' : 'inline-block'}` }}>
+                <GrLinkPrevious />
             </button>
 
             {currentGroup.map((page) => (
@@ -51,9 +59,9 @@ export function Pagination({ totalPage, loadPage, isLoading }) {
                 </div>
             ))}
 
-            <button onClick={handleNextGroup} style={{display: `${currentGroupStart + pagesPerGroup >= totalPage ? 'none' : 'inline-block'}`}}>
-                <GrLinkNext/>
+            <button onClick={handleNextGroup} style={{ display: `${currentGroupStart + pagesPerGroup >= totalPage ? 'none' : 'inline-block'}` }}>
+                <GrLinkNext />
             </button>
-        </div>
+        </motion.div>
     )
 }

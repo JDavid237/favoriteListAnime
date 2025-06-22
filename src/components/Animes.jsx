@@ -21,14 +21,9 @@ export function Animes() {
             <ViewAnimes animeList={animeList} loading={loading} toggleFavorite={toggleFavorite} favorites={favorites}>
                 <Filters updateFilter={updateFilter} sort={sort} />
             </ViewAnimes>
-            <motion.div
-                initial={{ opacity: 0, y: 1000 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 3 }}
-                key="pagination"
-            >
-                <Pagination totalPage={totalPage} loadPage={loadPage} isLoading={loading} />
-            </motion.div>
+
+            <Pagination totalPage={totalPage} loadPage={loadPage} isLoading={loading} />
+
 
         </div>
 
