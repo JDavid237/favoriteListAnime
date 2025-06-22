@@ -27,9 +27,9 @@
 }
 
 .loading {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .header {

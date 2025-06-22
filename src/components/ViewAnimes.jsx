@@ -24,7 +24,7 @@ export function ViewAnimes({ animeList, loading = false, children, toggleFavorit
             {children}
             <AnimatePresence mode="wait">
                 {!loading
-                    ? <motion.ul className="list" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: .5 }} key='animeList'>
+                    ? <motion.ul className="list" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: .7 }} key='animeList'>
                         {animeList.map((anime, index) => (
                             <li key={index} className="anime">
                                 <div className="header-anime">
@@ -53,7 +53,7 @@ export function ViewAnimes({ animeList, loading = false, children, toggleFavorit
                         ))}
                     </motion.ul>
 
-                    : <motion.div className="loading" initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.1 }} key="loading"><Commet color="#792972" size="medium" text="Cargando" textColor="#ffffff" /></motion.div>}
+                    : <motion.div className="loading" initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.5 }} key="loading"><Commet color="#792972" size="medium" text="Cargando" textColor="#ffffff" /></motion.div>}
             </AnimatePresence>
 
         </div>
