@@ -1,10 +1,11 @@
-import { useId } from "react"
+import { useId, useState } from "react"
 import { FaSearch } from "react-icons/fa"
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io"
 import "../styles/filters.css"
 import { useDebouncedCallback } from 'use-debounce';
 
-export function Filters({updateFilter, sort}) {
+export function Filters({updateFilter, sort, filters}) {
+    const [localeSearch, setLocaleSearch] = useState(filters.q || "")
     const searchId = useId()
 
     const debounceSearch = useDebouncedCallback((search) => {
@@ -13,12 +14,13 @@ export function Filters({updateFilter, sort}) {
 
     const handleSubmit = (event) => {
         event.preventDefault()
+        
     }
 
     const handleSearch = event => {
         const search = event.target.value
-        const newSearch = search.replace(" ", "").toLowerCase()
-        debounceSearch(newSearch)
+        setLocaleSearch(search)
+        debounceSearch(search)
     }
 
     const handleType = (event) => {
@@ -34,11 +36,11 @@ export function Filters({updateFilter, sort}) {
         <div className="filters">
             <form onSubmit={handleSubmit}>
                 <label htmlFor={searchId} className="search">
-                    <input onChange={handleSearch} type="text" id={searchId} name="search" placeholder="Dragon ball, Naruto, Pokemon..." />
+                    <input onChange={handleSearch} type="text" id={searchId} name="search" placeholder="Dragon ball, Naruto, Pokemon..." value={localeSearch}  />
                     <FaSearch />
                 </label>
 
-                <select onChange={handleType} className="anime-type">
+                <select onChange={handleType} className="anime-type" value={filters.type}>
                     <option value="">Todos</option>
                     <option value="tv">Tv</option>
                     <option value="movie">Pelicula</option>

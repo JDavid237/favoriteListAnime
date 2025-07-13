@@ -1,0 +1,289 @@
+.details-container {
+  width: 95%;
+  display: flex;
+  padding: 5px;
+  position: relative;
+  justify-content: center;
+  gap: 5px;
+
+}
+
+@media (max-width: 768px) {
+  .details-container {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/*	Main Section
+=========================================== */
+
+.main-section {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1;
+  position: sticky;
+  padding: 14px;
+  top: 2%;
+  left: 0;
+  background-color: rgba(17, 17, 17, 0.664);
+  height: max-content;
+}
+
+.anime-image img {
+  width: 100%;
+  box-shadow: 4px 4px 5px rgba(51, 23, 211, 0.87), -5px -5px 6px rgb(6, 84, 104);
+
+}
+
+@media (max-width: 768px) {
+  .main-section {
+    position: static;
+    flex-direction: row;
+    padding-right: 0;
+    gap: 2px;
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  .anime-image img {
+    width: 95%;
+  }
+}
+
+@media (max-width: 443px){
+  .main-section {
+    width: 100%
+  }
+
+  .anime-image {
+    margin-right: -35px
+  }
+
+  .anime-image img {
+    width: 80%
+  }
+}
+
+.anime-popularity {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+
+.anime-score {
+  margin-top: 4px;
+  width: max-content;
+  padding: 2px 15px 2px 5px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+  align-content: center;
+  justify-items: left;
+  background-color: rgba(6, 84, 104, 0.144);
+  border: 2px solid rgb(6, 84, 104);
+}
+
+.icons {
+  vertical-align: sub;
+  font-size: 16px;
+  text-align: center;
+}
+
+
+.anime-members {
+  font-size: clamp(13px, 1.3vw, 16px);
+}
+
+.anime-members span {
+  font-weight: 600;
+  margin-right: 5px;
+}
+
+/*	Secondary section
+=========================================== */
+
+.secondary-section {
+  flex: 4 1;
+  padding: 5px;
+  padding-right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.anime-title {
+  font-size: 18px;
+  text-align: center;
+
+}
+
+.anime-genres {
+  display: flex;
+  justify-content: center;
+  gap: 5px 20px;
+  flex-wrap: wrap;
+}
+
+.anime-genres div {
+  width: max-content;
+  color: rgba(3, 3, 253, 0.945);
+  font-weight: 600;
+}
+
+/*	Synopsus 
+=========================================== */
+
+.preview {
+  overflow: hidden;
+  max-height: 4.5em;
+  /* ajusta según líneas visibles */
+  transition: max-height 0.3s ease;
+}
+
+.toggle {
+  display: none;
+}
+
+.toggle:checked~.preview {
+  max-height: 999px;
+}
+
+.toggle~label {
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+
+}
+
+/*	Anime Extras
+  =========================================== */
+
+.anime-extra {
+  margin-top: 10px;
+  padding: 5px;
+  display: flex;
+  gap: 10px;
+
+}
+
+.anime-info {
+  flex: 1 1;
+  margin-top: 5px;
+  
+}
+
+.anime-info ul {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.anime-info li {
+  flex: 1 1 40%;
+  max-width: 200px;
+}
+
+.anime-info p {
+  margin: 4px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 14.5px;
+}
+
+.relations {
+  margin: 4px 0;
+  flex: 2 1;
+  min-width: 100%;
+}
+
+.relation {
+  color: rgb(129, 152, 202);
+  text-decoration: none;
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  /* Número máximo de líneas */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 14.5px;
+}
+
+.container-extra {
+  flex: 3 1;
+  box-shadow: 0 0 8px rgba(168, 165, 165, 0.788), 0 0 8px rgba(211, 208, 208, 0.671);
+  width: 100%;
+}
+
+.container-extra h4 {
+  margin-left: 5px;
+}
+
+.characters-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(103px, 1fr));
+  column-gap: 10px;
+
+}
+
+.anime-character {
+  margin: 5px 0;
+  padding: 6px 8px;
+  background-color: rgba(17, 17, 17, 0.178);
+  box-shadow: 5px 5px 5px rgba(68, 67, 67, 0.658);
+
+}
+
+.anime-character img {
+  width: 100%;
+  box-shadow: 0 0 5px whitesmoke;
+}
+
+.anime-character h5 {
+  font-size: 15px;
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  /* Número máximo de líneas */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+}
+
+.anime-themes {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.anime-themes div {
+  flex: 1 1;
+}
+
+.anime-themes li {
+  margin-top: 5px;
+}
+
+@media (max-width: 1100px) {
+  .anime-extra {
+    flex-direction: column;
+  }
+
+  .anime-info ul {
+    flex-direction: row;
+  }
+
+  .anime-info li {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 568px) {
+  .anime-themes {
+    flex-direction: column;
+  }
+}

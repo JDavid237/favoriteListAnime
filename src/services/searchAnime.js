@@ -19,6 +19,7 @@ export const searchAnime = async (params = {}, page = 1) => {
     const data = json?.data.map((anime) => ({
       id: anime.mal_id,
       title: anime.title,
+      title_english: anime?.title_english,
       type: anime.type,
       image: anime.images?.jpg?.image_url,
       score: anime.score,
@@ -26,7 +27,7 @@ export const searchAnime = async (params = {}, page = 1) => {
         ? `${anime.aired.prop.from.day}/${anime.aired.prop.from.month}/${anime.aired.prop.from.year}`
         : "N/A",
       season: anime.season,
-      episodes: anime.episodes,
+      episodes: anime.episodes || '?',
     }));
 
     return {

@@ -1,6 +1,6 @@
-import { Filters } from "./Filters"
+import { NavLink } from "react-router"
 
-export function Header({changeViewSearch, viewSearch}) {
+export function Header() {
     return (
         <header className="header">
             <div className="banner">
@@ -8,8 +8,8 @@ export function Header({changeViewSearch, viewSearch}) {
             </div>
             <div className="navbar">
                 <nav>
-                    <button onClick={() => changeViewSearch(true)} className={`button ${viewSearch ? 'active' : ''}`}><span>Animes</span></button>
-                    <button onClick={() => changeViewSearch(false)} className={`button ${!viewSearch ? 'active' : ''}`}> <span>My Lista</span></button>
+                    <NavLink to="/" className={`button ${({isActive}) => isActive ? 'active' : ''}`}><span>Animes</span></NavLink>
+                    <NavLink to="/favoritos" className={`button ${({isActive}) => isActive ? 'active' : ''}`}><span>Mi Lista</span></NavLink>
                 </nav>
             </div>
         </header>

@@ -1,5 +1,5 @@
 import { createContext, useReducer } from "react";
-import { favoriteReduce, initialState } from "../Reducers/favoriteReduce";
+import { favoriteReduce, initialState } from "../reducers/favoriteReduce";
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const Favorites = createContext()

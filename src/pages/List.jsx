@@ -1,13 +1,13 @@
 import { useFavorites } from "../hooks/useFavorites";
 import { useFilters } from "../hooks/useFilters";
-import { ViewAnimes } from "./ViewAnimes";
-import { Filters } from "./Filters";
+import { ViewAnimes } from "./../components/ViewAnimes";
+import { Filters } from "./../components/Filters";
 import { useEffect, useState } from "react";
 
-export function List() {
+export default function List() {
     const { favorites, toggleFavorite } = useFavorites()
     const [favoriteFilter, setFavoriteFilter] = useState([])
-    const { filters, updateFilter, sort, sorted } = useFilters()
+    const { filters, updateFilter, sort, sorted } = useFilters('filterFavorite')
 
     useEffect(() => {
         const { q: query, type } = filters;
@@ -15,13 +15,13 @@ export function List() {
 
         if (query) {
             filtered = filtered.filter((item) =>
-                item.title.toLowerCase().includes(query.toLowerCase())
+                item.title.toLowerCase().includes(query.toLowerCase()) ||
+                item.title_english?.toLowerCase().includes(query.toLowerCase())
             );
         }
 
         if (type) {
             filtered = filtered.filter((item) => item.type.toLowerCase() === type.toLowerCase());
-            console.log(favorites)
         }
 
         setFavoriteFilter(sorted(filtered));
@@ -31,7 +31,7 @@ export function List() {
     return (
         <div>
             <ViewAnimes animeList={favoriteFilter} toggleFavorite={toggleFavorite} isFavoritesList={true}>
-                <Filters updateFilter={updateFilter} sort={sort} />
+                <Filters updateFilter={updateFilter} sort={sort} filters={filters} />
             </ViewAnimes>
         </div>
     )

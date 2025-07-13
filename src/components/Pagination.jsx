@@ -1,12 +1,12 @@
 /* eslint-disable no-unused-vars */
-import { useMemo, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import { GrLinkPrevious, GrLinkNext } from "react-icons/gr";
 import { motion } from "motion/react";
 
 export function Pagination({ totalPage, loadPage, isLoading }) {
     const [currentPage, setCurrentPage] = useState(1)
+    const [pagesPerGroup, setPagesPerGroup] = useState(() => window.innerWidth <= 568 ? 5 : 10)
 
-    const pagesPerGroup = 10
     const totalPagesArray = useMemo(() => Array.from({ length: totalPage }, (_, i) => i + 1), [totalPage])
 
     const currentGroupStart = Math.floor((currentPage - 1) / pagesPerGroup) * pagesPerGroup
@@ -34,6 +34,16 @@ export function Pagination({ totalPage, loadPage, isLoading }) {
             loadPage(newPage)
         }
     }
+
+    useEffect(() => {
+        const handleRezise = () => {
+            setPagesPerGroup(window.innerWidth <= 568 ? 5 : 10)
+        }
+
+        window.addEventListener("resize", handleRezise)
+
+        return () => window.removeEventListener('resize', handleRezise)
+    }, [])
 
     if (isLoading || totalPage == 1) return
 
