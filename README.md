@@ -126,6 +126,7 @@ git clone https://github.com/JDavid237/favoriteListAnime
 cd ListaAnimes
 npm install
 npm run dev
+```
 
 
 ## 🌐 Enlace desplegado
