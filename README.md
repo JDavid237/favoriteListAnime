@@ -117,40 +117,6 @@ src/
 │ └── favorites.spec.js
 ```
 
-## 🧠 Hooks personalizados y aplicación de hooks de React
-
-### `useState`
-
-Manejo de estados para filtros, páginas, carga, favoritos, etc.
-
-### `useEffect`
-
-Llamadas a la API y sincronización de filtros y datos al cargar o actualizar
-
-### `useRef`
-
-Control de scroll horizontal y valores persistentes como `totalPage`
-
-### `useMemo`
-
-Evita recalcular ordenamientos innecesarios
-
-### `useCallback`
-
-Previene recreación de funciones como `loadPage`, `updateFilter`
-
-### `useReducer`
-
-Manejo avanzado del estado de favoritos (ADD, DELETE, CLEAR)
-
-### `useContext`
-
-Contexto global para la lista de favoritos, accesible desde cualquier componente
-
-### `useId`
-
-IDs accesibles y consistentes para formularios e inputs
-
 ---
 
 ## 📦 Instalación y uso
@@ -160,6 +126,7 @@ git clone https://github.com/JDavid237/favoriteListAnime
 cd ListaAnimes
 npm install
 npm run dev
+```
 
 
 ## 🌐 Enlace desplegado
