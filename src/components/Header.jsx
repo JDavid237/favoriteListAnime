@@ -4,7 +4,7 @@ export function Header() {
     return (
         <header className="header">
             <div className="banner">
-                <span>Anime</span> list
+                <div><span>Anime</span> list</div>   
             </div>
             <div className="navbar">
                 <nav>

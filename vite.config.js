@@ -11,4 +11,8 @@ export default defineConfig({
     exclude: ["**/e2e/**", "node_modules", "dist", "e2e"],
     setupFiles: "./src/test/setup.js",
   },
+  server: {
+    port: 3000,
+    host: '0.0.0.0'
+  }
 });

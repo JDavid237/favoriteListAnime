@@ -3,6 +3,9 @@ import { FaSearch } from "react-icons/fa"
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io"
 import "../styles/filters.css"
 import { useDebouncedCallback } from 'use-debounce';
+import { IoClose } from "react-icons/io5";
+import { MdClose } from "react-icons/md";
+import { GrClose } from "react-icons/gr";
 
 export function Filters({updateFilter, sort, filters}) {
     const [localeSearch, setLocaleSearch] = useState(filters.q || "")
@@ -32,12 +35,17 @@ export function Filters({updateFilter, sort, filters}) {
         updateFilter('sort')
     }
 
+    const handleReset = () => {
+        setLocaleSearch("")
+        updateFilter('q', "")
+    }
+
     return (
         <div className="filters">
             <form onSubmit={handleSubmit}>
                 <label htmlFor={searchId} className="search">
                     <input onChange={handleSearch} type="text" id={searchId} name="search" placeholder="Dragon ball, Naruto, Pokemon..." value={localeSearch}  />
-                    <FaSearch />
+                   {localeSearch ? <GrClose onClick={handleReset} style={{cursor: 'pointer'}} title="Cancelar busqueda"/> : <FaSearch/>} 
                 </label>
 
                 <select onChange={handleType} className="anime-type" value={filters.type}>

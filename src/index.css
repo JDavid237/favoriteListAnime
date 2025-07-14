@@ -20,6 +20,28 @@
   list-style: none;
 }
 
+h1, h2 {
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.89);
+  
+}
+
+h3 {
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.932);
+  
+}
+
+h4, h5 {
+  font-weight: 700;
+  color: rgba(255, 253, 253, 0.897);
+  font-style: italic;
+}
+
+p {
+  color: rgba(255, 255, 255, 0.753);
+}
+
 .main {
   width: 100%;
   max-width: 1200px;
@@ -27,7 +49,7 @@
   padding: 1.2vh;
 }
 
-@media (max-width: 443px){
+@media (max-width: 443px) {
   .main {
     padding: 10px;
   }
@@ -46,19 +68,34 @@
 }
 
 .banner {
+  position: relative;
   background-image: url('https://t4.ftcdn.net/jpg/08/50/30/01/360_F_850300178_2R0d9z8EiG6hN8Yj5QaBEYJAEVFflJly.jpg');
-  background-size: 88%;
+  background-size: 100%;
+  
   background-repeat: no-repeat;
   border-bottom: 2px solid rgba(128, 0, 128, 0.452);
   box-shadow: 1px 0 2px whitesmoke;
   background-position: 100% 50%;
   height: 50%;
-  font-size: 1.2rem;
+  
+
+}
+
+.banner div {
+
+  height: 104%;
   padding: 5px;
-  letter-spacing: 2px;
+  font-size: 1.2rem;
+  display: flex;
+
+  background-color: #24242473;
+  justify-content: left;
+  gap: 5px;
+  align-items: center;
+  letter-spacing: 3px;
   font-weight: 500;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: antiquewhite;
+  color: rgb(191, 224, 226);
 }
 
 .banner span {
@@ -66,8 +103,8 @@
   font-family: cursive;
   font-weight: bolder;
   color: transparent;
-  letter-spacing: 2px;
-  background-image: linear-gradient(to right, blue, purple);
+  letter-spacing: 4px;
+  background-image: linear-gradient(to right, rgb(154, 18, 207), rgba(10, 223, 212, 0.856));
   background-clip: text;
   text-transform: uppercase;
   -webkit-background-clip: text;
@@ -84,7 +121,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  
+
 }
 
 .navbar nav {
@@ -106,7 +143,7 @@
   background-color: transparent;
   border: 0;
   font-size: 1.05rem;
-  transition: border .5s ease,;
+  transition: border .5s ease, ;
   position: relative;
   cursor: pointer;
   padding: 2px;
@@ -121,7 +158,7 @@
   bottom: 0;
   left: 0;
   width: 0;
-  height:10%;
+  height: 10%;
   transition: width .5s ease;
 }
 
@@ -142,7 +179,7 @@
 
 .navbar .button:hover::after {
   height: 10%;
-  background-color: #d6d4d4 ;
+  background-color: #d6d4d4;
 }
 
 .navbar span {

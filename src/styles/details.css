@@ -130,8 +130,11 @@
 
 .anime-genres div {
   width: max-content;
-  color: rgba(3, 3, 253, 0.945);
-  font-weight: 600;
+  
+}
+
+.anime-genres p {
+  color: rgb(84, 84, 245);
 }
 
 /*	Synopsus 
