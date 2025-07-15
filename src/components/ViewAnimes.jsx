@@ -3,6 +3,7 @@ import { useState } from "react"
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "motion/react"
 import { Link } from "react-router"
+import "./../styles/animes.css"
 import { Loader } from "./Loader"
 import Swal from "sweetalert2"
 

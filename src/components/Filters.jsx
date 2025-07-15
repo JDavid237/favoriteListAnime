@@ -3,8 +3,6 @@ import { FaSearch } from "react-icons/fa"
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io"
 import "../styles/filters.css"
 import { useDebouncedCallback } from 'use-debounce';
-import { IoClose } from "react-icons/io5";
-import { MdClose } from "react-icons/md";
 import { GrClose } from "react-icons/gr";
 
 export function Filters({updateFilter, sort, filters}) {

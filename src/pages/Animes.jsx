@@ -1,7 +1,6 @@
 import { useFavorites } from "../hooks/useFavorites";
 import { useFilters } from "../hooks/useFilters";
 import { useGetAnime } from "../hooks/useGetAnime"
-import "./../styles/animes.css"
 import { Filters } from "../components/Filters";
 import { Pagination } from "./../components/Pagination";
 import { ViewAnimes } from "./../components/ViewAnimes";
