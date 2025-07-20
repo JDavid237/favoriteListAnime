@@ -24,17 +24,23 @@ export const searchAnime = async (params = {}, page = 1) => {
       image: anime.images?.jpg?.image_url,
       score: anime.score,
       aired: anime.aired?.prop?.from
-        ? `${anime.aired.prop.from.day}/${anime.aired.prop.from.month}/${anime.aired.prop.from.year}`
+        ? `${anime.aired.prop.from.day || "?"}/${
+            anime.aired.prop.from.month || "?"
+          }/${anime.aired.prop.from.year || "?"}`
         : "N/A",
       season: anime.season,
-      episodes: anime.episodes || '?',
+      episodes: anime.episodes || "?",
     }));
 
+    const uniqueData = Array.from(
+      new Map(data.map((item) => [item.id, item])).values()
+    );
+
     return {
-      data,
+      data: uniqueData,
       totalPage: json?.pagination?.last_visible_page,
     };
-  } catch(e){
+  } catch (e) {
     return {
       error: e,
       data: [],
